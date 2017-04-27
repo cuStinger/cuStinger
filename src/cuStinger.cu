@@ -115,7 +115,12 @@ void cuStinger::internalCSRTocuStinger(length_t* h_off, vertexId_t* h_adj, lengt
 		numBlocks.x=16000;
 	}	
 
-	int32_t verticesPerThreadBlock = ceil(float(nv)/float(numBlocks.x-1));
+	int32_t verticesPerThreadBlock;
+	if(numBlocks.x==1)
+		verticesPerThreadBlock=nv;
+	else
+		verticesPerThreadBlock= ceil(float(nv)/float(numBlocks.x-1));
+
 	devMakeGPUStinger<<<numBlocks,threadsPerBlock>>>(d_off,d_adj,verticesPerThreadBlock, d_cuStinger);
 
 	freeDeviceArray(d_adj);	
