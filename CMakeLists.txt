@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 project( custinger )
 
-set(CUDA_HOST_COMPILER /usr/bin/gcc-4.8)  
 FIND_PACKAGE(CUDA REQUIRED)
 
 INCLUDE(FindCUDA)
@@ -33,6 +32,8 @@ SET(CUDA_PROPAGATE_HOST_FLAGS OFF)
 
 LIST(APPEND CUDA_NCCC_FLAGS --compiler-options)
 LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_35,code=sm_35)
+LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_50,code=sm_50)
+LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_60,code=sm_60)
 LIST(APPEND CUDA_NVCC_FLAGS "-O3;-DVERBOSE;")
 LIST(APPEND CUDA_NVCC_FLAGS "-Xcompiler -Wall -D_FORCE_INLINES; --expt-extended-lambda;-use_fast_math")
 
