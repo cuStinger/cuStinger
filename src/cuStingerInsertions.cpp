@@ -4,6 +4,8 @@
 
 #include <unordered_map>
 #include <algorithm>
+#include <cmath>
+using std::ceil;
 
 #include "utils.hpp"
 #include "update.hpp"
