@@ -1,6 +1,6 @@
 # cuSTINGER 
 
-# cuSTINGER is no longer supported. Please visit Hornet for an improved dyanmic graph data structure (https://github.com/hornet-gt/hornet) 
+# cuSTINGER is no longer supported. Please visit Hornet for an improved dynamic graph data structure (https://github.com/hornet-gt/hornet) 
 
 The following includes instructions on how to clone and build this repo.
 It is important that you clone the repo with all its dependencies using the **recursive** option:
