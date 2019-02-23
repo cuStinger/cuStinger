@@ -2,7 +2,8 @@
 #include <numeric>
 #include <stdlib.h>
 #include <inttypes.h>
-
+#include <cmath>
+using std::ceil;
 
 #include "memoryManager.hpp"
 
